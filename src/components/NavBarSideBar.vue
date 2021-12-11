@@ -5,7 +5,7 @@
       :clipped-left="clipped"
       fixed
       app
-      style="background-color: #2f3a40; border-bottom: 1px solid #a6a6a6"
+      style="background-color: #f48e30; border-bottom: 1px solid #a6a6a6"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title class="aroundLogo"> </v-toolbar-title>
@@ -24,9 +24,9 @@
         >
           <v-icon
             class="iconify"
-            data-icon="mdi:boat"
-            height="30"
-            width="30"
+            data-icon="mdi:cart-minus"
+            height="10"
+            width="10"
             style="color: #2f3a40"
           ></v-icon>
         </v-avatar>
@@ -34,14 +34,14 @@
       <v-toolbar-title
         class="aroundTitle"
         v-t="'websiteTitle'"
-        style="background-color: #2f3a40; color: white"
+        style="background-color: #f48e30; color: white"
         @click="redirect('/image')"
       >
       </v-toolbar-title>
 
       <v-toolbar
         v-if="!isMobile"
-        color="#2F3A40"
+        color="#f48e30"
         style="box-shadow: none; border-bottom: 1px solid #a6a6a6"
       >
         <v-spacer></v-spacer>
