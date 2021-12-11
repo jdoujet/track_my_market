@@ -1,39 +1,48 @@
 <template>
   <div id="main">
-    <v-container>
-      <div class="center mt-15" style="background-color: black">
-        <v-card style=" background-color: transparent">
-          <v-col style="background-color: red;">
-            <v-row style="margin-bottom:4%; background-color: green;  transform: rotate(-7deg);">
-              <v-card-text class="main_title">Track My </v-card-text>
-            </v-row>
-            <v-row style="transform: rotate(-7deg);">
-              <v-card-text class="main_title2">Market</v-card-text>
-            </v-row>
-          </v-col>
-          <v-img src="/logo.png"> </v-img>
-          
-        </v-card>
-        
-      </div>
+      
+        <div style="margin-top:10%; ">
+          <v-row>
+            <v-img class="supermarket_background" src="/supermarket_background.png"  >
+              <v-container>
+                <div style=" background-color: black">
+                  <v-row style="margin-top:5%;">
 
-      <v-col>
-        <v-card height="300" color="#707070" style="padding: 1%">
-          <v-col>
-            <v-row style="margin-bottom: 2%">
-              <v-card-title style="font-weight: bold; color: white">{{
-                $t("texteHeader") 
-              }}</v-card-title>
-            </v-row>
-            <v-row style="margin-left: 2%">
-              <v-text style=" color: white">{{
-                $t("texteAccueil")
-              }}</v-text>
-            </v-row>
-          </v-col>
-        </v-card>
-      </v-col>
-    </v-container>
+                    <v-col style="background-color: yellow;" >
+                      <v-row justify="center">
+                        <v-img contain height="400" width="400" src="/app_smartphone.png"></v-img>
+                      </v-row>
+                      <!--<v-card style="background-size: cover;" >
+                      
+                      </v-card>-->
+                    </v-col>
+
+                    <v-col style="background-color: red;">
+                      <v-row style="margin-bottom:8%; background-color: green;  transform: rotate(-7deg);">
+                        <v-card-text class="main_title">Track My </v-card-text>
+                      </v-row>
+                      <v-row style="transform: rotate(-7deg);">
+                        <v-card-text class="main_title2">Market</v-card-text>
+                      </v-row>
+                    </v-col>
+                    
+                  </v-row>
+
+                  <v-img src="/logo.png"> </v-img>
+                  
+                
+
+                </div>
+            </v-container>
+        </v-img>
+        
+    </v-row>
+    <v-row>
+      <v-card>
+            <v-card-text>testsetsetset</v-card-text>
+      </v-card>
+    </v-row>
+    </div>
   </div>
 </template>
 
@@ -48,6 +57,8 @@ export default {
     redirect(to) {
       this.$router.push(to);
     },
+
+
   },
 };
 </script>

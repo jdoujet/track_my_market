@@ -1,5 +1,5 @@
 <template>
-  <v-app style="background-color:#1a1919">
+  <v-app style="background-color:white">
     <sidebar></sidebar>
     <sidebar v-if="!isMobile"/>
     <v-main v-else>
