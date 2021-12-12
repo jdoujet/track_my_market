@@ -54,7 +54,7 @@ const messages = {
   fr: {
     menuHome: 'Accueil',
     menuCrudStation : 'Articles',
-    websiteTitle: 'Sauveteurs du dunkerquois',
+    websiteTitle: 'Track My Market',
     searchArticles : 'Rechercher les articles',
     articleFilters: [
       { url: "by/boat/name", value: "Par bateau", placeholder: "Entrer un nom de bateau" },
@@ -78,7 +78,7 @@ const messages = {
   en: {
     menuHome: 'Home',
     menuCrudStation : 'Stations',
-    websiteTitle: 'Rescuers from Dunkirk',
+    websiteTitle: 'Track My Market',
     searchArticles : 'Search articles',
     articleFilters: [
       { url: "by/boat/name", value: "By boat", placeholder:"Search a boat name" },
@@ -102,7 +102,7 @@ const messages = {
   de: {
     menuHome: 'Startseite',
     menuCrudStation : 'Jahreszeiten',
-    websiteTitle: 'Retter aus Dünkirchen',
+    websiteTitle: 'Track My Market',
     searchArticles : 'Artikel suchen',
     articleFilters: [
       { url: "by/boat/name", value: "Mit dem Schiff", placeholder:"Geben Sie einen Bootsnamen ein" },
