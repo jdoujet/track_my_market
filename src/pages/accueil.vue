@@ -205,6 +205,14 @@ export default {
 
 <style>
 
+@font-face {
+    font-family: Bukhari Script;
+    src: url("/BukhariScript-Regular.eot"); /* IE9 Compat Modes */
+    src: url("/BukhariScript-Regular.woff") format("woff"), /* Modern Browsers */
+         url("/BukhariScript-Regular.woff2") format("woff2"),
+         url("/BukhariScript-Regular.ttf")  format("truetype"), /* Safari, Android, iOS */
+         url("/BukhariScript-Regular.svg") format("svg"); /* Legacy iOS */
+}
 @keyframes float {
 	0% {
 		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
