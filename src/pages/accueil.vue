@@ -49,10 +49,10 @@
                     </v-col>
 
                     <v-col v-if="windowWidth>450" align="center" style="background: rgba(0,0,0,0.0);">
-                      <v-row justify="center" style="margin-bottom:10%; transform: rotate(-7deg);">
+                      <v-row justify="center" style="margin-bottom:10%; transform: rotate(-7deg);webkit-transform : rotate(-7deg);">
                         <v-card-text class="main_title">Track My </v-card-text>
                       </v-row>
-                      <v-row justify="center" style="transform: rotate(-7deg);">
+                      <v-row justify="center" style="transform: rotate(-7deg); webkit-transform : rotate(-7deg);">
                         <v-card-text class="main_title2">Market</v-card-text>
                       </v-row>
                       <v-row justify="center" style="margin-left:2%; margin-right:2%;">
