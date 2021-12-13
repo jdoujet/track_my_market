@@ -71,7 +71,6 @@
                           TELECHARGER
                         </v-btn>
                       </v-row>
-                          
                     </v-col>
 
                     <v-col v-else align="center" style="background: rgba(0,0,0,0.0); margin-top:10%;">
@@ -92,8 +91,8 @@
                           </v-card-text>
                         </v-card>
                       </v-row>
-                      <v-row justify="center" style="margin-top:5%"> 
-                        <v-btn color="#e47a19" height=50 width=150 style="font-size:17px; color:white">
+                      <v-row justify="center" style="margin-top:10%"> 
+                        <v-btn color="#e47a19" height=50 width=150 style="font-size:17px; color:white;">
                           TELECHARGER
                         </v-btn>
                       </v-row>
@@ -106,10 +105,16 @@
                   
                   
                 
-                <v-row justify="center" style="margin-top:-5%;" ><section id="section07" class="demo" style="position: relative;">
+                <v-row v-if="windowWidth>450" justify="center" style="margin-top:-5%;" ><section id="section07" class="demo" style="position: relative;">
   
   <a href=""  onclick="event.preventDefault(); $('html, body').animate({ scrollTop: $('#steps_sections').offset().top}, 500, 'linear');"><span></span><span></span><span></span></a>
 </section></v-row>
+                <v-row v-else justify="center" style="margin-top:10%; margin-right: 4%;" ><section id="section07" class="demo" style="position: relative;">
+                  
+                  <a href=""  onclick="event.preventDefault(); $('html, body').animate({ scrollTop: $('#steps_sections').offset().top}, 500, 'linear');"><span></span><span></span><span></span></a>
+                </section></v-row>
+                
+                
 <!-- event.preventDefault();window.scrollTo(0, $('#steps_sections').offset().top-85);-->
                 </div>
             </v-container>
@@ -143,7 +148,7 @@
         
     </v-row>
     </v-container>
-    <v-img class="logo" src="/logo.png"> </v-img>
+    <!--<v-img class="logo" src="/logo.png"> </v-img>-->
 
     </div>
     
