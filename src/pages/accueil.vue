@@ -57,17 +57,17 @@
                       </v-row>
                       <v-row justify="center" style="margin-left:2%; margin-right:2%;">
                         <v-card style="margin-top:20%; background: rgba(0,0,0,0.6);">
-                          <v-card-text style="font-size:17px; color:white;">
+                          <v-card-text class="app_block1_title" style="font-size:17px; color:white;">
                             "Track My Market une application pour tous, pensée pour les malvoyants"
                           </v-card-text>
-                          <v-card-text style="font-size:15px; color:white;">
+                          <v-card-text class="app_block1_description" style="font-size:15px; color:white;">
                             Retrouvez dans les rayons vos articles recherchés en un rien de temps grâce à un système de géolocalisation et d'aide vocale avancés.
                             N'attendez plus pour télécharger cette application.
                           </v-card-text>
                         </v-card>
                       </v-row>
                       <v-row justify="center" style="margin-top:5%"> 
-                        <v-btn color="#e47a19" height=50 width=150 style="font-size:17px; color:white">
+                        <v-btn class="app_block1_btn_download" color="#e47a19" height=50 width=150 style="font-size:17px; color:white">
                           TELECHARGER
                         </v-btn>
                       </v-row>
@@ -82,17 +82,17 @@
                       </v-row>
                       <v-row justify="center" style="margin-left:2%; margin-right:2%;">
                         <v-card style="margin-top:20%; background: rgba(0,0,0,0.6);">
-                          <v-card-text style="font-size:17px; color:white;">
+                          <v-card-text class="app_block1_title" style="font-size:17px; color:white;">
                             "Track My Market une application pour tous, pensée pour les malvoyants"
                           </v-card-text>
-                          <v-card-text style="font-size:15px; color:white;">
+                          <v-card-text class="app_block1_description" style="font-size:15px; color:white;">
                             Retrouvez dans les rayons vos articles recherchés en un rien de temps grâce à un système de géolocalisation et d'aide vocale avancés.
                             N'attendez plus pour télécharger cette application.
                           </v-card-text>
                         </v-card>
                       </v-row>
                       <v-row justify="center" style="margin-top:10%"> 
-                        <v-btn color="#e47a19" height=50 width=150 style="font-size:17px; color:white;">
+                        <v-btn class="app_block1_btn_download" color="#e47a19" height=50 width=150 style="font-size:17px; color:white;">
                           TELECHARGER
                         </v-btn>
                       </v-row>
@@ -100,9 +100,7 @@
                     </v-col>
                     <!--<span class="animated bounce"></span>-->
                     
-                  </v-row>
-
-                  
+                  </v-row>              
                   
                 
                 <v-row v-if="windowWidth>450" justify="center" style="margin-top:-5%;" ><section id="section07" class="demo" style="position: relative;">
@@ -138,10 +136,10 @@
               </v-avatar>
               </div>
               <v-row justify="center">
-                <v-card-title  style="padding-top: 5%; font-size:20px; color:white;">{{item.title}}</v-card-title>
+                <v-card-title class="steps_title" style="padding-top: 5%; font-size:20px; color:white;">{{item.title}}</v-card-title>
               </v-row>
               <v-row justify="center">
-                <v-card-text style="color:white; margin-bottom:4%">{{item.text}}</v-card-text>
+                <v-card-text class="steps_description" style="color:white; margin-bottom:4%">{{item.text}}</v-card-text>
               </v-row>
             </v-card>
         </v-col>
@@ -151,7 +149,6 @@
     <!--<v-img class="logo" src="/logo.png"> </v-img>-->
 
     </div>
-    
    
   </div>
 </template>

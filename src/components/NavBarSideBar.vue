@@ -39,10 +39,76 @@
       >
       </v-toolbar-title>
 
+       <template v-slot:extension>
+              
+              <v-fab-transition>
+                <v-btn
+                  v-if="windowWidth>500"
+                  @click="changeFontSize('+')"
+                  color="black"
+                  fab
+                  dark
+                  big
+                  absolute
+                  bottom
+                  right
+                >
+                  <v-icon size="40">mdi-magnify-plus-outline</v-icon>
+                </v-btn>
+                <v-btn
+                  v-else
+                  @click="changeFontSize('+')"
+                  color="black"
+                  fab
+                  dark
+                  small
+                  absolute
+                  bottom
+                  right
+                >
+                  <v-icon size="30">mdi-magnify-plus-outline</v-icon>
+                </v-btn>
+              </v-fab-transition>
+             
+              <v-fab-transition>
+                <v-btn
+                  v-if="windowWidth>500"
+                  @click="changeFontSize('-')"
+                  class="btn-zoom-minus"
+                  color="black"
+                  fab
+                  dark
+                  big
+                  absolute
+                  bottom
+                  right
+                >
+                  <v-icon size="40">mdi-magnify-minus-outline</v-icon>
+                </v-btn>
+                <v-btn
+                  v-else
+                  @click="changeFontSize('-')"
+                  class="btn-zoom-minus"
+                  color="black"
+                  fab
+                  dark
+                  small
+                  absolute
+                  bottom
+                  right
+                >
+                  <v-icon size="30">mdi-magnify-minus-outline</v-icon>
+                </v-btn>
+              </v-fab-transition>
+             
+      </template>
+      
+              
+      
       <v-toolbar
         v-if="!isMobile"
         color="#f48e30"
-        style="box-shadow: none; border-bottom: 1px solid #a6a6a6"
+        style="box-shadow: none;"
       >
         <v-spacer></v-spacer>
         <v-btn
@@ -89,16 +155,51 @@ export default {
       miniVariant: false,
       right: true,
       title: "Sauveteurs du dunkerquois",
+
+      windowWidth: window.innerWidth,
     };
   },
   mounted() {
     this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    window.onresize = () => {
+      this.windowWidth = window.innerWidth
+    }
   },
 
   methods: {
     redirect(to) {
       this.$router.push(to);
     },
+
+    changeFontSize(symbol){
+
+      let tabClassFontToIncrease= [
+      'main_title',
+      'main_title2',
+      'app_block1_title',
+      'app_block1_description',
+      'app_block1_btn_download',
+      'steps_title',
+      'steps_description'
+      ];
+
+      for (let i = 0; i < tabClassFontToIncrease.length; i++) {
+          let elementByClass = document.getElementsByClassName(tabClassFontToIncrease[i]);
+          let style;
+          let currentSize;
+          for(let j=0; j < elementByClass.length; j++){
+            style = window.getComputedStyle(elementByClass[j],null).getPropertyValue('font-size');
+            currentSize = parseFloat(style);
+            if(symbol=='+'){
+              elementByClass[j].style.fontSize = (currentSize + 2) + 'px';
+            }
+            else{
+              elementByClass[j].style.fontSize = (currentSize - 2) + 'px';
+            }
+          }
+      }
+    },
+
   },
 };
 </script>
@@ -113,5 +214,69 @@ export default {
 }
 .arrowDropdown {
   margin-left: 5px;
+}
+
+
+/* Custom, iPhone Retina */ 
+
+@media only screen and (min-width : 100px) {
+  .btn-zoom-minus{
+    margin-right:18%;
+  }
+}
+
+@media only screen and (min-width : 320px) {
+  .btn-zoom-minus{
+    margin-right:15%;
+  }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+  .btn-zoom-minus{
+    margin-right:14%;
+  }
+}
+
+@media only screen and (min-width : 600px) {
+  .btn-zoom-minus{
+    margin-right:14%;
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  .btn-zoom-minus{
+    margin-right:10%;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .btn-zoom-minus{
+    margin-right:8%;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  .btn-zoom-minus{
+    margin-right:6%;
+  }
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1500px) {
+  .btn-zoom-minus{
+    margin-right:5%;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1750px) {
+  .btn-zoom-minus{
+    margin-right:4%;
+  }
+}
+
 }
 </style>

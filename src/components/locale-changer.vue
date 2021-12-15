@@ -1,17 +1,18 @@
 <template>
-  <div class="locale-changer" style="padding-top: 30px">
-    <v-container>
-      <v-row>
-        <v-col cols="5" sm="5">
+  <div class="locale-changer" style="padding-top: 30px;">
+    <v-container >
+      <v-row >
+        <v-col cols="5" sm="5" >
           <v-select
             :items="langs"
             item-text="name"
             v-model="$i18n.locale"
-            color="#60378c"
+            color="black"
             solo
             outlined
+           
           >
-            <template v-slot:item="{ item }">
+            <template v-slot:item="{ item }" >
               {{ item.fullname }}
               <country-flag :country="item.flag" />
             </template>
@@ -31,9 +32,9 @@ export default {
   data() {
     return {
       langs: [
-        { name: "fr", fullname: "Français", flag: "fr" },
-        { name: "en", fullname: "English", flag: "gb" },
-        { name: "de", fullname: "Deutsch", flag: "de" },
+        { name: "FR", fullname: "Français", flag: "fr" },
+        { name: "EN", fullname: "English", flag: "gb" },
+        { name: "DE", fullname: "Deutsch", flag: "de" },
       ],
     };
   },

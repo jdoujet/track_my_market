@@ -51,7 +51,7 @@ Vue.component('l-marker', LMarker);
 
 //defining text for both language french and english
 const messages = {
-  fr: {
+  FR: {
     menuHome: 'Accueil',
     menuCrudStation : 'Articles',
     websiteTitle: 'Track My Market',
@@ -75,7 +75,7 @@ const messages = {
     Les sauveteurs du Dunkerquois recensent les sauvetages en mer depuis 1740. Des sauvetages sont effectués à travers le monde auprès de bateaux en détresse.\
     Notre site regroupe un onglet de recherche permettant de trouver des personnes sauvées, des sauveteurs et des bateaux sauveteurs.'
   },
-  en: {
+  EN: {
     menuHome: 'Home',
     menuCrudStation : 'Stations',
     websiteTitle: 'Track My Market',
@@ -99,7 +99,7 @@ const messages = {
     Our site includes a search tab to find rescued people, rescuers and rescue boats.\
     '
   },
-  de: {
+  DE: {
     menuHome: 'Startseite',
     menuCrudStation : 'Jahreszeiten',
     websiteTitle: 'Track My Market',
@@ -126,7 +126,7 @@ const messages = {
 
 // Create VueI18n instance with options
 const i18n = new VueI18n({
-  locale: 'fr',
+  locale: 'FR',
   messages,
 })
 Vue.component('l-popup', LPopup);
