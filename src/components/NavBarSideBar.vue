@@ -3,6 +3,7 @@
     <!--app bar desktop-->
     <v-app-bar
       :clipped-left="clipped"
+      id="app_nav_bar"
       fixed
       app
       style="background-color: #f48e30; border-bottom: 1px solid #a6a6a6"
@@ -34,13 +35,13 @@
       <v-toolbar-title
         class="aroundTitle"
         v-t="'websiteTitle'"
+        id="title_app_nav_bar"
         style="background-color: #f48e30; color: white"
         @click="redirect('/image')"
       >
       </v-toolbar-title>
 
        <template v-slot:extension>
-              
               <v-fab-transition>
                 <v-btn
                   v-if="windowWidth>500"
@@ -100,7 +101,23 @@
                   <v-icon size="30">mdi-magnify-minus-outline</v-icon>
                 </v-btn>
               </v-fab-transition>
-             
+                  <!--append-icon="mdi-comment-eye-outline"-->
+                  <v-switch
+                  
+                  v-model="switchBlind"
+                  @click="switchVisualMode()"
+                  inset
+                  color="black"
+                  absolute
+                  top 
+                  left
+                  class="switch_blind"
+                  style="margin-top:1%"
+                >
+                </v-switch>
+                
+                <!--<v-icon absolute top left size="50">mdi-comment-eye-outline</v-icon>-->
+
       </template>
       
               
@@ -123,6 +140,7 @@
           {{ $t(item.title) }}
         </v-btn>
         <locale-changer></locale-changer>
+       
       </v-toolbar>
     </v-app-bar>
   </div>
@@ -134,8 +152,10 @@ import localeChanger from "./locale-changer.vue";
 export default {
   components: { localeChanger },
   name: "sidebar",
+  props: ['windowWidthParent'],
   data() {
     return {
+      switchBlind:false,
       clipped: true,
       drawer: false,
       fixed: false,
@@ -154,16 +174,27 @@ export default {
       ],
       miniVariant: false,
       right: true,
-      title: "Sauveteurs du dunkerquois",
+      title: "Track My Market",
 
       windowWidth: window.innerWidth,
     };
   },
+ /* watch: {
+      switchBlind(){
+        this.switchVisualMode();
+      }
+    },*/
+  watch: {
+       windowWidthParent: function(newVal, oldVal) {
+           console.log('Prop changed: ', newVal, ' | was: ', oldVal);
+           this.windowWidth = newVal;
+           //this.$forceUpdate();
+           //document.getElementById('header_malvoyant').style.display = 'block';*/
+    }
+  },
   mounted() {
     this.isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    window.onresize = () => {
-      this.windowWidth = window.innerWidth
-    }
+    
   },
 
   methods: {
@@ -171,6 +202,24 @@ export default {
       this.$router.push(to);
     },
 
+    switchVisualMode(){
+         //console.log(window.getComputedStyle(document.getElementById('header_normal'),null).getPropertyValue('display'));
+        if(window.getComputedStyle(document.getElementById('header_normal'),null).getPropertyValue('display')=="block" || window.getComputedStyle(document.getElementById('header_normal'),null).getPropertyValue('display')=="inline"){
+           document.getElementById('header_normal').style.display = 'none';
+           document.getElementById('header_malvoyant').style.display = 'block';
+          console.log(document.getElementById('app_nav_bar').style.backgroundColor);
+          document.getElementById('app_nav_bar').style.backgroundColor='rgb(255,255,255)';
+          document.getElementById('title_app_nav_bar').style.backgroundColor='rgb(255,255,255)';
+           this.windowWidth = window.innerWidth
+         }
+         else{
+            document.getElementById('header_normal').style.display = 'block';
+            document.getElementById('header_malvoyant').style.display = 'none';
+            document.getElementById('app_nav_bar').style.backgroundColor='rgb(244, 142, 48)';
+            this.windowWidth = window.innerWidth
+         }
+
+    },
     changeFontSize(symbol){
 
       let tabClassFontToIncrease= [
@@ -215,6 +264,7 @@ export default {
 .arrowDropdown {
   margin-left: 5px;
 }
+
 
 
 /* Custom, iPhone Retina */ 

@@ -1,9 +1,8 @@
 <template>
-  <div id="main">
-        <div v-if="checkWhichVisualActivate" id="header_normal" style="margin-top:6%;">
-          <v-row >
+        <div style="margin-top:6%;">
+          <v-row>
             <!--height=620-->
-            <v-img height=700 class="supermarket_background" src="/supermarket_background.png">
+            <v-container height=700 >
               <v-container>
                 <div style="background: rgba(0,0,0,0.0);">
                   <v-row style="margin-top:5%; background: rgba(0,0,0,0.0);">
@@ -49,12 +48,10 @@
 
                     <v-col v-if="windowWidth>450" align="center" style="background: rgba(0,0,0,0.0);">
                       <v-row justify="center" style="margin-bottom:10%; transform: rotate(-7deg);webkit-transform : rotate(-7deg);">
-                        <v-card-text class="main_title" style="color: #e47a19!important;font-family: 'Bukhari Script', sans-serif; text-shadow: 2px 2px #ffde59,  6px 6px #FCFABF!important;">
-                          Track My </v-card-text>
+                        <v-card-text class="main_title">Track My </v-card-text>
                       </v-row>
                       <v-row justify="center" style="transform: rotate(-7deg); webkit-transform : rotate(-7deg);">
-                        <v-card-text class="main_title2" style="color: #e47a19!important; font-family: 'Bukhari Script', sans-serif; text-shadow: 2px 2px #ffde59,  6px 6px #FCFABF!important;">
-                          Market</v-card-text>
+                        <v-card-text class="main_title2">Market</v-card-text>
                       </v-row>
                       <v-row justify="center" style="margin-left:2%; margin-right:2%;">
                         <v-card style="margin-top:20%; background: rgba(0,0,0,0.6);">
@@ -68,7 +65,7 @@
                         </v-card>
                       </v-row>
                       <v-row justify="center" style="margin-top:5%"> 
-                        <v-btn class="app_block1_btn_download" color="#e47a19" height=50 width=150 style="font-size:17px; color:white">
+                        <v-btn @click="showWidth()" class="app_block1_btn_download" color="black" height=50 width=150 style="font-size:17px; color:white">
                           TELECHARGER
                         </v-btn>
                       </v-row>
@@ -76,12 +73,10 @@
 
                     <v-col v-else align="center" style="background: rgba(0,0,0,0.0); margin-top:10%;">
                       <v-row justify="center" style="margin-bottom:10%; transform: rotate(-7deg);">
-                        <v-card-text class="main_title" style="color: #e47a19!important;font-family: 'Bukhari Script', sans-serif; text-shadow: 2px 2px #ffde59,  6px 6px #FCFABF!important;">
-                          Track My </v-card-text>
+                        <v-card-text class="main_title">Track My </v-card-text>
                       </v-row>
                       <v-row justify="center" style="transform: rotate(-7deg);">
-                        <v-card-text class="main_title2" style="color: #e47a19!important;font-family: 'Bukhari Script', sans-serif; text-shadow: 2px 2px #ffde59,  6px 6px #FCFABF!important;">
-                          Market</v-card-text>
+                        <v-card-text class="main_title2">Market</v-card-text>
                       </v-row>
                       <v-row justify="center" style="margin-left:2%; margin-right:2%;">
                         <v-card style="margin-top:20%; background: rgba(0,0,0,0.6);">
@@ -95,53 +90,43 @@
                         </v-card>
                       </v-row>
                       <v-row justify="center" style="margin-top:10%"> 
-                        <v-btn class="app_block1_btn_download" color="#e47a19" height=50 width=150 style="font-size:17px; color:white;">
+                        <v-btn @click="showWidth()" class="app_block1_btn_download" color="black" height=50 width=150 style="font-size:17px; color:white;">
                           TELECHARGER
                         </v-btn>
                       </v-row>
                           
                     </v-col>
-                    <!--<span class="animated bounce"></span>-->
                     
                   </v-row>              
                   
                 
                 <v-row v-if="windowWidth>450" justify="center" style="margin-top:-5%;" ><section id="section07" class="demo" style="position: relative;">
   
-  <a href=""  onclick="event.preventDefault(); $('html, body').animate({ scrollTop: $('#steps_sections').offset().top}, 500, 'linear');">
-    <span style="border-left: 5px solid #fff; border-bottom: 5px solid #fff;"></span>
-    <span style="border-left: 5px solid #fff; border-bottom: 5px solid #fff;"></span>
-    <span span style="border-left: 5px solid #fff; border-bottom: 5px solid #fff;"></span>
-    </a>
+  <a href=""  onclick="event.preventDefault(); $('html, body').animate({ scrollTop: $('#steps_sections').offset().top}, 500, 'linear');"><span></span><span></span><span></span></a>
 </section></v-row>
                 <v-row v-else justify="center" style="margin-top:10%; margin-right: 4%;" ><section id="section07" class="demo" style="position: relative;">
                   
-                  <a href=""  onclick="event.preventDefault(); $('html, body').animate({ scrollTop: $('#steps_sections').offset().top}, 500, 'linear');">
-                    <span style="border-left: 5px solid #fff; border-bottom: 5px solid #fff;"></span>
-                    <span style="border-left: 5px solid #fff; border-bottom: 5px solid #fff;"></span>
-                    <span style="border-left: 5px solid #fff; border-bottom: 5px solid #fff;"></span>
-                    </a>
+                  <a href=""  onclick="event.preventDefault(); $('html, body').animate({ scrollTop: $('#steps_sections').offset().top}, 500, 'linear');"><span></span><span></span><span></span></a>
                 </section></v-row>
-                
 
                 </div>
             </v-container>
-        </v-img>
+        </v-container>
         
     </v-row>
-    <v-container id="steps_sections">
+        <v-container id="steps_sections">
     <v-row class="w3-container" style="margin-top:3%;">
       
         
       <v-col cols="12" sm="12" md="4" lg="4" xl="4" v-for="(item, index) in itemTab" :key="index" class="text-center, w3-center w3-animate-left">
-            <v-card  color="#e47a19" style="margin-bottom:3%;">
+            <v-card  color="black" style="margin-bottom:3%;">
               <div class="text-center" style="padding-top:5%;">
               <v-avatar
                 color="white"
                 width="120"
                 height="120"
               >
-                <v-icon class="iconify" dark size="70" style="color:#e47a19;" >{{item.icon}}</v-icon>
+                <v-icon class="iconify" dark size="70" style="color:black;" >{{item.icon}}</v-icon>
                 
               </v-avatar>
               </div>
@@ -156,21 +141,13 @@
         
     </v-row>
     </v-container>
-    <!--<v-img class="logo" src="/logo.png"> </v-img>-->
-
     </div>
-    <!-- v-else-->
-  
-   <headerMalvoyant v-show= hidden v-if="checkIfVisualActivate" :windowWidthParent.sync=windowWidth id="header_malvoyant" style=""> </headerMalvoyant>
-    
-  </div>
 </template>
 
 <script>
-import headerMalvoyant from "@/components/accueil-header-malvoyant.vue";
 export default {
-  components: { headerMalvoyant },
-  name: "accueil",
+  name: "accueil-header-malvoyant",
+  props: ['windowWidthParent'],
   data (){
     return{
       img_carousel: [
@@ -178,7 +155,7 @@ export default {
         '/app_smartphone2.png',
         '/app_smartphone3.png',
       ],
-      itemTab : [
+       itemTab : [
       {
         icon : "mdi-cart-check",
         title : "Choisissez votre/vos article(s)",
@@ -197,34 +174,32 @@ export default {
         
       }
     ],
-    windowWidth: window.innerWidth,
+    windowWidth: this.windowWidthParent ,
     }
   },
+   watch: {
+       windowWidthParent: function(newVal, oldVal) {
+           console.log('Prop changed: ', newVal, ' | was: ', oldVal);
+           this.windowWidth = newVal;
+           //this.$forceUpdate();
+           //document.getElementById('header_malvoyant').style.display = 'block';*/
+       }
 
-  mounted(){
+       
+   },
+ /*  mounted(){
     window.onresize = () => {
-                this.windowWidth = window.innerWidth
+        this.windowWidth = this.windowWidthParent;
+        console.log(this.windowWidth + ' test');
     }
-  },
+  },*/
   methods: {
-    /**
-     * changes, redirects to the page
-     * @param to :  name of the page to redirect
-     */
-    redirect(to) {
-      this.$router.push(to);
-    },
+      showWidth(){
+          console.log(this.windowWidth +'trtr');
+      },
 
-    checkWhichVisualActivate(){
-        return window.getComputedStyle(document.getElementById('header_normal'),null).getPropertyValue('display')=="block" || window.getComputedStyle(document.getElementById('header_normal'),null).getPropertyValue('display')=="inline";
-    },
-    checkIfVisualActivate(){
-        console.log(window.getComputedStyle(document.getElementById('header_normal'),null).getPropertyValue('display')=="none");
-        return window.getComputedStyle(document.getElementById('header_normal'),null).getPropertyValue('display')=="none";
-    }
-
-  },
-};
+  }
+}
 </script>
 
 <style>
@@ -265,6 +240,8 @@ export default {
   width: 50px;
   height: 50px;
   margin-left: -12px;
+  border-left: 5px solid black;
+  border-bottom: 5px solid black;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
   -webkit-animation: sdb07 2s infinite;
@@ -309,25 +286,22 @@ export default {
   }
 }
 
-/*
+
 .v-card__text.main_title{
-  color: #e47a19!important;
-  
-   font-family: 'Bukhari Script', sans-serif;
-  
-   
-   text-shadow: 2px 2px #ffde59,  6px 6px #FCFABF!important;
-   /*text-shadow: 2px 2px #ffde59,  6px 6px #FCFABF!important;
+  color: black!important;
+   /*font-size:80px!important;*/
+   /*transform: rotate(-7deg);*/
+   text-shadow: 2px 2px black,  6px 6px grey!important;
+   /*text-shadow: 2px 2px #ffde59,  6px 6px #FCFABF!important;*/
 }
 
  .v-card__text.main_title2{
-   color: #e47a19!important;
-  
-   font-family: 'Bukhari Script', sans-serif;
-   
-   text-shadow: 2px 2px #ffde59,  6px 6px #FCFABF!important;
+   color: black!important;
+   /*font-size:80px!important;*/
+   /*transform: rotate(-7deg);*/
+   text-shadow: 2px 2px black,  6px 6px grey!important;
  }
-*/
+
  @media only screen and (min-width: 200px) {
   .v-card__text.main_title{
    font-size: 300%;
@@ -370,10 +344,4 @@ export default {
    font-size: 800%;
     }
  }
-
-
- 
-
-</style>
-
-
+ </style>

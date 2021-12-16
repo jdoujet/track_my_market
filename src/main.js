@@ -12,7 +12,6 @@ import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
 
 
-
 //import NavBarSideBar from "@/components/NavBarSideBar";
 
 import accueil from "@/pages/accueil";
